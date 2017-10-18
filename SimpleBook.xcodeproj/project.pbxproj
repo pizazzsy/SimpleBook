@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1CF5058F15E8296ABA153B6A /* Pods_SimpleBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CB3550E33C825CFBA92704 /* Pods_SimpleBook.framework */; };
 		CAB95FDA1F96F2A9002FC905 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB95FD91F96F2A9002FC905 /* AppDelegate.m */; };
 		CAB95FDD1F96F2A9002FC905 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB95FDC1F96F2A9002FC905 /* ViewController.m */; };
 		CAB95FE01F96F2A9002FC905 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAB95FDE1F96F2A9002FC905 /* Main.storyboard */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12CA7961777A21EF26EDF53D /* Pods-SimpleBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleBook/Pods-SimpleBook.release.xcconfig"; sourceTree = "<group>"; };
+		42D23477B3F820B42C24BB86 /* Pods-SimpleBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleBook/Pods-SimpleBook.debug.xcconfig"; sourceTree = "<group>"; };
+		66CB3550E33C825CFBA92704 /* Pods_SimpleBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAB95FD51F96F2A9002FC905 /* SimpleBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAB95FD81F96F2A9002FC905 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CAB95FD91F96F2A9002FC905 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -33,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CF5058F15E8296ABA153B6A /* Pods_SimpleBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		825A00BC87B34AC6FF982E01 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				42D23477B3F820B42C24BB86 /* Pods-SimpleBook.debug.xcconfig */,
+				12CA7961777A21EF26EDF53D /* Pods-SimpleBook.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		902250B5BD375647BE68E50A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				66CB3550E33C825CFBA92704 /* Pods_SimpleBook.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CAB95FCC1F96F2A8002FC905 = {
 			isa = PBXGroup;
 			children = (
 				CAB95FD71F96F2A9002FC905 /* SimpleBook */,
 				CAB95FD61F96F2A9002FC905 /* Products */,
+				825A00BC87B34AC6FF982E01 /* Pods */,
+				902250B5BD375647BE68E50A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,9 +102,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CAB95FEB1F96F2A9002FC905 /* Build configuration list for PBXNativeTarget "SimpleBook" */;
 			buildPhases = (
+				AC90AE649E31EF822B073F0D /* [CP] Check Pods Manifest.lock */,
 				CAB95FD11F96F2A9002FC905 /* Sources */,
 				CAB95FD21F96F2A9002FC905 /* Frameworks */,
 				CAB95FD31F96F2A9002FC905 /* Resources */,
+				2664B08026E008824DB64FE4 /* [CP] Embed Pods Frameworks */,
+				ADA1331544435A9245D2D17B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -136,6 +163,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2664B08026E008824DB64FE4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleBook/Pods-SimpleBook-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC90AE649E31EF822B073F0D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		ADA1331544435A9245D2D17B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleBook/Pods-SimpleBook-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CAB95FD11F96F2A9002FC905 /* Sources */ = {
@@ -276,6 +351,7 @@
 		};
 		CAB95FEC1F96F2A9002FC905 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42D23477B3F820B42C24BB86 /* Pods-SimpleBook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -290,6 +366,7 @@
 		};
 		CAB95FED1F96F2A9002FC905 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12CA7961777A21EF26EDF53D /* Pods-SimpleBook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
